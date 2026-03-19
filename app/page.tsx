@@ -77,11 +77,11 @@ export default function Page() {
           <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr] md:items-center">
             <div>
               <div className="mb-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-sm text-cyan-200">
-                Computational Biologist • Bioinformatics Scientist • XAI, Multi-Omics & AI for Biomedicine
+                Computational Biologist • Bioinformatics Scientist • XAI • Multi-Omics & AI for Biomedicine
               </div>
 
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-                Nakul Tanwar
+                Dr. Nakul Tanwar
               </h1>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
@@ -326,7 +326,7 @@ export default function Page() {
                     href="mailto:nakultanwar_2k22phdbt507@dtu.ac.in"
                     className="text-cyan-200 hover:underline"
                   >
-                    nakultanwar_2k22phdbt507@dtu.ac.in
+                    nakultanwar_2k22phdbt507@dtu.ac.in / tbret41@gmail.com
                   </a>
                 </p>
 
