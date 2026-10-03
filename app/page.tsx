@@ -26,6 +26,33 @@ export default function Page() {
     },
   ];
 
+  const projects = [
+    {
+      kind: "Single-cell · Postdoctoral proposal",
+      name: "DisProtCellLLM",
+      subtitle: "Disease Protein-Cell Large Language Model",
+      desc: "A three-tower multimodal framework for disease-aware single-cell classification. It fuses scRNA-seq expression, ESM2 protein language model embeddings and disease-contextual biological text through cross-attention. An LLM layer (Mistral 7B) then proposes protein-structure-informed drug target hypotheses.",
+      poc: "On small cell lung cancer scRNA-seq (about 26.8k cells), patient-level held-out evaluation gave AUROC 0.85 for the PCA+ESM2 model, versus 0.55–0.70 for transcript-only baselines.",
+      pocLabel: "Proof of concept",
+      tags: ["ESM2", "Cross-attention", "scRNA-seq", "SCLC", "LLM hypotheses"],
+    },
+    {
+      kind: "Spatial omics · Extends DisProtCellLLM",
+      name: "SCOPE",
+      subtitle: "Spatially Contextualized Omics with Protected Explanations",
+      desc: "A five-tower framework that adds a spatial graph and histology morphology (ResNet50) to transcriptomic, protein and pathway towers. A grounding layer checks every gene an LLM proposes against the observed expression data to measure hallucination.",
+      poc: "On one GeoMx DSP slide (7 ROIs), SCOPE separated morphologically similar regions by gene expression, found three unsupervised tumor microenvironment zones, and showed LLM hallucination varying from 0% in the tumor core to 30% in stroma. Full validation on 175 ROIs from 19 patients is planned.",
+      pocLabel: "Exploratory proof of concept",
+      tags: [
+        "Spatial transcriptomics",
+        "GeoMx DSP",
+        "Multimodal fusion",
+        "LLM grounding",
+        "ES-SCLC",
+      ],
+    },
+  ];
+
   const experience = [
     {
       role: "Teaching Assistant",
@@ -126,6 +153,9 @@ export default function Page() {
                   <p className="mt-2 text-base leading-7 text-slate-200">
                     Commendable Research Award, DTU Research & Innovation Excellence Awards 2025
                   </p>
+                  <p className="mt-2 text-base leading-7 text-slate-200">
+                    Commendable Research Award, DTU Research & Innovation Excellence Awards 2026
+                  </p>
                 </div>
               </div>
             </div>
@@ -133,7 +163,48 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:px-10">
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-16 md:px-10">
+        <div className="rounded-[2rem] border border-slate-800 bg-slate-900/50 p-8">
+          <h2 className="text-2xl font-semibold">Featured Projects</h2>
+          <p className="mt-2 text-slate-400">
+            Proof-of-concept work in multimodal, explainable AI for disease biology.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="rounded-3xl border border-slate-800 bg-slate-950/60 p-6"
+              >
+                <p className="text-sm uppercase tracking-[0.2em] text-cyan-200">
+                  {project.kind}
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold text-white">
+                  {project.name}
+                </h3>
+                <p className="mt-1 text-sm text-cyan-300">({project.subtitle})</p>
+                <p className="mt-4 leading-7 text-slate-300">{project.desc}</p>
+                <p className="mt-4 leading-7 text-slate-300">
+                  <span className="text-slate-400">{project.pocLabel}: </span>
+                  {project.poc}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-16 md:px-10">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6">
             <h2 className="text-xl font-semibold">About</h2>
@@ -273,6 +344,9 @@ export default function Page() {
                 </p>
                 <p className="mt-2 leading-7 text-slate-300">
                   Commendable Research Award, DTU Research & Innovation Excellence Awards 2025
+                </p>
+                <p className="mt-2 leading-7 text-slate-300">
+                  Commendable Research Award, DTU Research & Innovation Excellence Awards 2026
                 </p>
               </div>
             </div>
